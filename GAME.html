@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<!--
+ONELLA MPAMA
+-->
+<html>
+    <head>
+	<h1>GAME</h1>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body style="
+    height: 100%;
+    background: url(http://2.bp.blogspot.com/-lKzZWUmXVGE/VCmTcYhxC5I/AAAAAAAABi4/yuHFXkqyKjg/s1600/Background-Images-Green.jpg);
+    background-size: cover;
+"/>
+
+	<form>
+	<INPUT Type="BUTTON" VALUE="Home" ONCLICK="window.location.href=''">
+	<INPUT Type="BUTTON" VALUE="How" ONCLICK="window.location.href=''">
+	<INPUT Type="BUTTON" VALUE="About" ONCLICK="window.location.href=''">
+	<INPUT Type="BUTTON" VALUE="Help" ONCLICK="window.location.href=''"></FORM>
+        
+	<br>
+		</br>
+
+
+<!-- Begin
+var FKeyPad = document.Keypad;
+var Accumulate = 0;
+var FlagNewNum = false;
+var PendingOp = "";
+function NumPressed (Num) {
+if (FlagNewNum) {
+FKeyPad.ReadOut.value  = Num;
+FlagNewNum = false;
+   }
+else {
+if (FKeyPad.ReadOut.value == "0")
+FKeyPad.ReadOut.value = Num;
+else
+FKeyPad.ReadOut.value += Num;
+   }
+}
+function Operation (Op) {
+var Readout = FKeyPad.ReadOut.value;
+if (FlagNewNum && PendingOp != "=");
+else
+{
+FlagNewNum = true;
+if ( '+' == PendingOp )
+Accumulate += parseFloat(Readout);
+else if ( '-' == PendingOp )
+Accumulate -= parseFloat(Readout);
+else if ( '/' == PendingOp )
+Accumulate /= parseFloat(Readout);
+else if ( '*' == PendingOp )
+Accumulate *= parseFloat(Readout);
+else
+Accumulate = parseFloat(Readout);
+FKeyPad.ReadOut.value = Accumulate;
+PendingOp = Op;
+   }
+}
+function Decimal () {
+var curReadOut = FKeyPad.ReadOut.value;
+if (FlagNewNum) {
+curReadOut = "0.";
+FlagNewNum = false;
+   }
+else
+{
+if (curReadOut.indexOf(".") == -1)
+curReadOut += ".";
+   }
+FKeyPad.ReadOut.value = curReadOut;
+}
+function ClearEntry () {
+FKeyPad.ReadOut.value = "0";
+FlagNewNum = true;
+}
+function Clear () {
+Accumulate = 0;
+PendingOp = "";
+ClearEntry();
+}
+function Neg () {
+FKeyPad.ReadOut.value = parseFloat(FKeyPad.ReadOut.value) * -1;
+}
+function Percent () {
+FKeyPad.ReadOut.value = (parseFloat(FKeyPad.ReadOut.value) / 100) * parseFloat(Accumulate);
+}
+// End -->
+</SCRIPT>
+
+
+<div align="center"><object width="640" height="480"><param name="movie" value="http://www.onlinegames7.com/games/crystal-story/rpg.swf"><param name="quality" value="high"><embed src="http://www.onlinegames7.com/games/crystal-story/rpg.swf" quality="high" width="640" height="480" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer"></embed></object><br /><br /></div>
+<html>
+<head>
+<title></title>
+<style>
+.Question {background-color:yellow;}
+</style>
+<script>
+correctAnswers=[0,1,2,1];
+var AnsweredCorrectly=0;
+function start(){
+document.getElementById('quizstart').style.display="none";
+document.getElementById('question0').style.display="block";
+}
+function toggle(a,b){
+AnsweredCorrectly+=(document.getElementsByName('ans'+a)[correctAnswers[a]].checked?1:0);
+document.getElementById('question'+a).style.display="none";
+document.getElementById('question'+b).style.display="block";
+}
+function end(a){
+AnsweredCorrectly+=(document.getElementsByName('ans'+a)[correctAnswers[a]].checked?1:0);
+document.getElementById('question'+a).style.display="none";
+document.getElementById('summary').style.display="block";
+document.getElementById('result').innerHTML=AnsweredCorrectly;
+}
+</script>
+
+</head>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function startTime() {
+    var today=new Date();
+    var h=today.getHours();
+    var m=today.getMinutes();
+    var s=today.getSeconds();
+    m = checkTime(m);
+    s = checkTime(s);
+    document.getElementById('txt').innerHTML = h+":"+m+":"+s;
+    var t = setTimeout(function(){startTime()},500);
+}
+
+function checkTime(i) {
+    if (i<10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+}
+</script>
+</head>
+
+<body style="height: 100%;
+    background: url(http://2.bp.blogspot.com/-lKzZWUmXVGE/VCmTcYhxC5I/AAAAAAAABi4/yuHFXkqyKjg/s1600/Background-Images-Green.jpg);
+    background-size: cover" onload="startTime()">
+
+<div id="txt"></div>
+<form method="POST" name="wordcount">
+  <script language="JavaScript">
+
+function countit(){
+
+/*Word count script
+By JavaScript Kit (http://javascriptkit.com)
+Over 400+ free scripts here!
+*/
+
+var formcontent=document.wordcount.wordcount2.value
+formcontent=formcontent.split(" ")
+document.wordcount.wordcount3.value=formcontent.length
+}
+</script>
+<table border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td width="100%"><textarea rows="12" name="wordcount2" cols="60" wrap="virtual"></textarea></td>
+    </tr>
+    <tr>
+      <td width="100%"><div align="right"><p><input type="button" value="Calculate Words"
+      onClick="countit()"> <input type="text" name="wordcount3" size="20"></p>
+      <div align="center"><center><p><font face="arial" size="-2">Word Counter</font>
+      <font face="arial, helvetica" size="-2">
+   </font></p>
+      </center></div></div></td>
+    </tr>
+  </table>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<!-- saved from url=(0047)file:///C:/Users/Cortex%20Hub/Desktop/New.html# -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	</head><body style="    height: 100%;
+    background: url(http://2.bp.blogspot.com/-lKzZWUmXVGE/VCmTcYhxC5I/AAAAAAAABi4/yuHFXkqyKjg/s1600/Background-Images-Green.jpg);
+    background-size: cover;
+" onload="begintimer()" allowtransparency="true"><h1>EXAMINATION</h1>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+
+	
+</tbody></table><b>
+
+</b>
+</form>
+
+
+<font face="Verdana, Arial, Helvetica" size="2">
+
+<script language="JavaScript">
+
+</script>
+
+
+
+
+<title>EXAMINATION</title>
+<style>
+.Question {background-color:yellow;}
+</style>
+<script>
+correctAnswers=[0,1,2,1];
+var AnsweredCorrectly=0;
+function start(){
+document.getElementById('quizstart').style.display="none";
+document.getElementById('question0').style.display="block";
+}
+function toggle(a,b){
+AnsweredCorrectly+=(document.getElementsByName('ans'+a)[correctAnswers[a]].checked?1:0);
+document.getElementById('question'+a).style.display="none";
+document.getElementById('question'+b).style.display="block";
+}
+function end(a){
+AnsweredCorrectly+=(document.getElementsByName('ans'+a)[correctAnswers[a]].checked?1:0);
+document.getElementById('question'+a).style.display="none";
+document.getElementById('summary').style.display="block";
+document.getElementById('result').innerHTML=AnsweredCorrectly;
+}
+</script>
+
+
+
+<h1>MATHS &amp; ENGLISH</h1>
+<div id="quizstart">
+    <button onclick="start()">ENGLISH</button>
+</div>
+<div id="question0" style="display:none">
+<span class="question">Do human beings have a head?</span><br>
+<input type="radio" name="ans0">Yes<br>
+<input type="radio" name="ans0">No<br>
+   <button onclick="toggle(0,1)">continue</button>
+</div>
+
+<div id="question1" style="display:none">
+<span class="question">How many legs do they have?</span><br>
+<input type="radio" name="ans1">1<br>
+<input type="radio" name="ans1">2<br>
+<input type="radio" name="ans1">3<br>
+   <button onclick="toggle(1,2)">continue</button>
+</div>
+<div id="question2" style="display:none">
+<span class="question">What are they using to see?</span><br>
+<input type="radio" name="ans2">legs<br>
+<input type="radio" name="ans2">arms<br>
+<input type="radio" name="ans2">eyes<br>
+   <button onclick="toggle(2,3)">continue</button>
+</div>
+<div id="question3" style="display:none">
+<span class="question">Do human beings have wings?</span><br>
+<input type="radio" name="ans3">Yes<br>
+<input type="radio" name="ans3">No<br>
+   <button onclick="end(3)">continue</button>
+</div>
+<div id="summary" style="display:none">
+you have <span id="result"></span> correct answers
+</div>
+
+    
+
+
+
+<style>
+div#test{ border:#000 1px solid; padding:10px 40px 40px 40px; }
+</style>
+<script>
+var pos = 0, test, test_status, question, choice, choices, chA, chB, chC, correct = 0;
+var questions = [
+    [ "What is 10 + 4?", "12", "14", "16", "B" ],
+	[ "What is 20 - 9?", "7", "13", "11", "C" ],
+	[ "What is 7 x 3?", "21", "24", "25", "A" ],
+	[ "What is 8 / 2?", "10", "2", "4", "C" ]
+];
+function _(x){
+	return document.getElementById(x);
+}
+function renderQuestion(){
+	test = _("test");
+	if(pos >= questions.length){
+		test.innerHTML = "<h2>You got "+correct+" of "+questions.length+" questions correct</h2>";
+		_("test_status").innerHTML = "Test Completed";
+		test.innerHTML += "<a href='#'>Re-test</a>";
+		test.innerHTML += "<button>Done</button>";
+		pos = 0;
+		correct = 0;
+		return false;
+	}
+	_("test_status").innerHTML = "Question "+(pos+1)+" of "+questions.length;
+	question = questions[pos][0];
+	chA = questions[pos][1];
+	chB = questions[pos][2];
+	chC = questions[pos][3];
+	test.innerHTML = "<h3>"+question+"</h3>";
+	test.innerHTML += "<input type='radio' name='choices' value='A'> "+chA+"<br>";
+	test.innerHTML += "<input type='radio' name='choices' value='B'> "+chB+"<br>";
+	test.innerHTML += "<input type='radio' name='choices' value='C'> "+chC+"<br><br>";
+	test.innerHTML += "<button onclick='checkAnswer()'>Submit Answer</button>";
+
+
+}
+
+function checkAnswer(){
+	choices = document.getElementsByName("choices");
+	for(var i=0; i<choices.length; i++){
+		if(choices[i].checked){
+			choice = choices[i].value;
+		}
+	}
+	if(choice == questions[pos][4]){
+		correct++;
+	}
+	pos++;
+	renderQuestion();
+}
+window.addEventListener("load", renderQuestion, false);
+</script>
+
+<script>
+var limit="00:10"
+if (document.images){
+var parselimit=limit.split(":")
+parselimit=parselimit[0]*60+parselimit[1]*1
+}
+function begintimer(){
+if (!document.images)
+return
+if (parselimit==1)
+window.location="msg.html"
+else{ run-in 
+parselimit-=1
+curmin=Math.floor(parselimit/60)
+cursec=parselimit%60
+if (curmin!=0)
+curtime=curmin+" minutes and "+cursec+" seconds left"
+else
+curtime=cursec+" seconds left"
+window.status=curtime
+setTimeout("begintimer()",1000)
+}
+}
+
+</script>
+
+
+<h2 id="test_status">Question 1 of 4</h2>
+<div id="test"><h3>What is 10 + 4?</h3><input type="radio" name="choices" value="A"> 12<br><input type="radio" name="choices" value="B"> 14<br><input type="radio" name="choices" value="C"> 16<br><br><button onclick="checkAnswer()">Submit Answer</button></div>
+
+
+
+
+<script>
+function startTime() {
+    var today=new Date();
+    var h=today.getHours();
+    var m=today.getMinutes();
+    var s=today.getSeconds();
+    m = checkTime(m);
+    s = checkTime(s);
+    document.getElementById('txt').innerHTML = h+":"+m+":"+s;
+    var t = setTimeout(function(){startTime()},500);
+}
+
+function checkTime(i) {
+    if (i<10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+}
+</script>
+
+
+
+
+
+<div id="txt"></div>
+
+
+
+
+
+
+</font></body>
+<input type="BUTTON" value="Calculator" onclick="window.location.href=""></input>
+<!-- Begin
+var FKeyPad = document.Keypad;
+var Accumulate = 0;
+var FlagNewNum = false;
+var PendingOp = "";
+function NumPressed (Num) {
+if (FlagNewNum) {
+FKeyPad.ReadOut.value  = Num;
+FlagNewNum = false;
+   }
+else {
+if (FKeyPad.ReadOut.value == "0")
+FKeyPad.ReadOut.value = Num;
+else
+FKeyPad.ReadOut.value += Num;
+   }
+}
+function Operation (Op) {
+var Readout = FKeyPad.ReadOut.value;
+if (FlagNewNum && PendingOp != "=");
+else
+{
+FlagNewNum = true;
+if ( '+' == PendingOp )
+Accumulate += parseFloat(Readout);
+else if ( '-' == PendingOp )
+Accumulate -= parseFloat(Readout);
+else if ( '/' == PendingOp )
+Accumulate /= parseFloat(Readout);
+else if ( '*' == PendingOp )
+Accumulate *= parseFloat(Readout);
+else
+Accumulate = parseFloat(Readout);
+FKeyPad.ReadOut.value = Accumulate;
+PendingOp = Op;
+   }
+}
+function Decimal () {
+var curReadOut = FKeyPad.ReadOut.value;
+if (FlagNewNum) {
+curReadOut = "0.";
+FlagNewNum = false;
+   }
+else
+{
+if (curReadOut.indexOf(".") == -1)
+curReadOut += ".";
+   }
+FKeyPad.ReadOut.value = curReadOut;
+}
+function ClearEntry () {
+FKeyPad.ReadOut.value = "0";
+FlagNewNum = true;
+}
+function Clear () {
+Accumulate = 0;
+PendingOp = "";
+ClearEntry();
+}
+function Neg () {
+FKeyPad.ReadOut.value = parseFloat(FKeyPad.ReadOut.value) * -1;
+}
+function Percent () {
+FKeyPad.ReadOut.value = (parseFloat(FKeyPad.ReadOut.value) / 100) * parseFloat(Accumulate);
+}
+// End --></html>
